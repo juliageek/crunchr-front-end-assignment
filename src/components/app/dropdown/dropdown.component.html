@@ -1,0 +1,8 @@
+<mat-form-field>
+  <mat-label>Location</mat-label>
+  <mat-select (selectionChange)="onChange($event.value)">
+    <mat-option *ngFor="let location of locations" [value]="location.id">
+      {{location.pathNames}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

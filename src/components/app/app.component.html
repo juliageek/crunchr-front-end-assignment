@@ -1,0 +1,12 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="/assets/logo.png">
+</div>
+<h2>Please select a location to get started: </h2>
+<app-dropdown (selectedLocation)="onSelectLocation($event)"></app-dropdown>
+<button mat-raised-button color="primary" (click)="searchEmployees()">Search</button>
+<app-employees-table [employees]="employees" *ngIf="employees && employees.length"></app-employees-table>
+
