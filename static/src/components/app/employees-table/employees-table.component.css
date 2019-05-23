@@ -1,0 +1,14 @@
+.employees-table {
+  width: 90%;
+}
+
+.employees-table__header, .employees-table__row {
+  background-color: #fff;
+  height: 32px;
+  padding: 4px 8px;
+}
+
+.employees-table__header {
+  font-weight: 500 !important;
+  background-color: #cff2fd;
+}

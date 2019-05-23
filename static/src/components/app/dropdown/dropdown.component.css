@@ -1,0 +1,7 @@
+.mat-select {
+    display: inline;
+}
+
+.mat-form-field, .mat-form-field-wrapper {
+    width: 90%;
+}

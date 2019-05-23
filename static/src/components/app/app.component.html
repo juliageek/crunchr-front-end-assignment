@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <img width="300" alt="Crunchr Logo" src="/assets/logo.png">
+</div>
+<h3 class="app-headline">Please select a location to get started: </h3>
+<div class="search-fields__wrapper">
+  <app-dropdown (selectedLocation)="onSelectLocation($event)"></app-dropdown>
+  <app-input (inputPercentage)="onInputPercentage($event)"></app-input>
+  <button mat-flat-button class="search__button" (click)="searchEmployees()" disableRipple [disabled]="!location">Search</button>
+</div>
+<span *ngIf="employees && !employees.length && percentage !== '0'" class="warning">None of the locations match your search criteria</span>
+<app-employees-table [employees]="employees" *ngIf="employees && employees.length" (sortChange)="onSortChange($event)"></app-employees-table>
+
+

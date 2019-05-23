@@ -1,0 +1,21 @@
+.app-headline {
+    font-weight: 300;
+}
+
+.search-fields__wrapper {
+    display: grid;
+    grid-template-columns: 45% 25% 10% auto;
+    grid-template-rows: 65% auto;
+}
+
+app-dropdown {
+    grid-column-start: 1;
+}
+
+.search__button {
+    font-size: 16px;
+    line-height: 24px;
+    background-color: #F3A92E;
+    color: #FFF;
+    grid-column-start: 3;
+}
