@@ -4,3 +4,8 @@ export interface Location {
   name: string;
   path: number[];
 }
+
+export interface Company {
+  companyName: string;
+  percentage: number;
+}

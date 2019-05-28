@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Location } from '../../../interfaces/location.interface';
+import { Location } from '../../../interfaces/interfaces';
 import { LocationsService } from '../../../services/locations.service';
 
 @Component({
@@ -14,7 +14,8 @@ export class DropdownComponent implements OnInit{
   constructor(private locationsService: LocationsService) {}
 
   onChange(value): void {
-    this.selectedLocation.emit(value);
+    const location = this.locations.find((location) => location.id === value);
+    this.selectedLocation.emit(location);
   }
 
  ngOnInit(): void {
@@ -31,5 +32,5 @@ export class DropdownComponent implements OnInit{
       });
   }
 
-  @Output() selectedLocation = new EventEmitter<string>();
+  @Output() selectedLocation = new EventEmitter<Location>();
 }

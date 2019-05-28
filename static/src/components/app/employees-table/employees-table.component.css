@@ -1,14 +1,22 @@
 .employees-table {
   width: 90%;
+  margin-top: 16px;
+  border: 0.0025em solid #222;
+  border-collapse: collapse;
 }
 
 .employees-table__header, .employees-table__row {
   background-color: #fff;
   height: 32px;
   padding: 4px 8px;
+  border: 0.0025em solid #222;
 }
 
 .employees-table__header {
   font-weight: 500 !important;
   background-color: #cff2fd;
+}
+
+td {
+  border: 0.0025em solid #222;
 }

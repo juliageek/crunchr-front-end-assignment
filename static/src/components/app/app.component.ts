@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location, Company } from '../../interfaces/interfaces';
 import { LocationsService } from '../../services/locations.service';
 import { Sort } from '@angular/material';
 import Utils from '../../utils/utils';
@@ -10,9 +11,10 @@ import Utils from '../../utils/utils';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  employees: any;
-  location: string;
-  percentage = '0';
+  employees: Company[];
+  locationCategory: string;
+  selectedLocation: Location;
+  percentage = 0;
 
   constructor(private locationsService: LocationsService) {
 
@@ -23,7 +25,8 @@ export class AppComponent {
   }
 
   onSelectLocation(location) {
-    this.location = location;
+    this.selectedLocation = location;
+    this.locationCategory = location.pathNames.split('/')[0];
   }
 
   onSortChange(event) {
@@ -46,7 +49,7 @@ export class AppComponent {
   }
 
   searchEmployees() {
-    this.locationsService.getEmployeesPerLocation(this.location, this.percentage)
+    this.locationsService.getEmployeesPerLocation(this.selectedLocation.id, this.percentage)
       .subscribe(response => {
         this.employees = Object.values(response);
       });

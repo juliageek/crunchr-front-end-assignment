@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Company } from "../../../interfaces/interfaces";
 
 @Component({
   selector: 'app-employees-table',
@@ -10,7 +11,8 @@ export class EmployeesTableComponent {
     this.sortChange.emit(value);
   }
 
-  @Input() employees: any[];
+  @Input() employees: Company[];
+  @Input() locationCategory: string;
   @Output() sortChange = new EventEmitter<string>();
 
 }

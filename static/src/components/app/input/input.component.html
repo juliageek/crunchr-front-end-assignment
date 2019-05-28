@@ -1,6 +1,6 @@
 <mat-form-field class=percentage-input>
   <div class="form-fields-wrapper">
     <input matInput type="text" placeholder="Add percentage" [(ngModel)]="value" (ngModelChange)="onChange(value)">
-    <button mat-flat-button *ngIf="value !== '0'" aria-label="Clear" (click)="clearValue()" disableRipple>X</button>
+    <button mat-flat-button *ngIf="value !== 0" aria-label="Clear" (click)="clearValue()" disableRipple>X</button>
   </div>
 </mat-form-field>

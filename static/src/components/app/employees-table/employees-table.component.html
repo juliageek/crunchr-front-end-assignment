@@ -1,7 +1,7 @@
 <table matSort (matSortChange)="onSortChange($event)" class="employees-table">
   <tr>
     <th mat-sort-header="companyName" class="employees-table__header">Company Name</th>
-    <th mat-sort-header="percentage" class="employees-table__header">Percentage</th>
+    <th mat-sort-header="percentage" class="employees-table__header">% Employees in {{ locationCategory }}</th>
   </tr>
 
   <tr *ngFor="let employee of employees">

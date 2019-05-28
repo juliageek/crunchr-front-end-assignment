@@ -6,9 +6,10 @@
 <div class="search-fields__wrapper">
   <app-dropdown (selectedLocation)="onSelectLocation($event)"></app-dropdown>
   <app-input (inputPercentage)="onInputPercentage($event)"></app-input>
-  <button mat-flat-button class="search__button" (click)="searchEmployees()" disableRipple [disabled]="!location">Search</button>
+  <button mat-flat-button class="search__button" (click)="searchEmployees()" disableRipple [disabled]="!selectedLocation">Search</button>
 </div>
-<span *ngIf="employees && !employees.length && percentage !== '0'" class="warning">None of the locations match your search criteria</span>
-<app-employees-table [employees]="employees" *ngIf="employees && employees.length" (sortChange)="onSortChange($event)"></app-employees-table>
+<span *ngIf="employees && !employees.length && percentage !== 0" class="warning">None of the locations match your search criteria</span>
+<span *ngIf="employees && employees.length">Results for <strong>{{ locationCategory }}</strong></span>
+<app-employees-table [employees]="employees" [locationCategory]="locationCategory" *ngIf="employees && employees.length" (sortChange)="onSortChange($event)"></app-employees-table>
 
 
